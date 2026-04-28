@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme Choice Model</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <span class="eyebrow">Discrete Choice Model</span>
+      <h1>Programme Path Explorer</h1>
+      <p>
+        This JavaScript version converts the Octave assignment logic into a browser app for GitHub Pages.
+        Use Aiman's baseline profile or test a custom student profile to see which programme path is most likely.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2 class="section-title">Profile Setup</h2>
+
+        <div class="controls">
+          <div class="field">
+            <label for="userName">User Name</label>
+            <input id="userName" type="text" placeholder="Enter your name">
+          </div>
+
+          <div class="field">
+            <label>Profile Mode</label>
+            <div class="mode-row">
+              <label class="mode-pill">
+                <input type="radio" name="mode" value="aiman" checked>
+                Aiman Default Profile
+              </label>
+              <label class="mode-pill">
+                <input type="radio" name="mode" value="custom">
+                Custom Profile
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Programme</th>
+                <th>Interest</th>
+                <th>Exam Results</th>
+                <th>Career</th>
+                <th>Location</th>
+                <th>Fees</th>
+                <th>Explore</th>
+              </tr>
+            </thead>
+            <tbody id="ratingsBody"></tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 18px;">Factor Importance</h2>
+        <div class="weights-grid" id="weightsGrid"></div>
+
+        <div class="actions">
+          <button class="primary" id="runButton">Run Model</button>
+          <button class="secondary" id="loadAimanButton" type="button">Load Aiman Data</button>
+          <button class="ghost" id="resetCustomButton" type="button">Reset Custom Inputs</button>
+        </div>
+
+        <p class="footer-tip">
+          In Aiman mode, the website uses the assignment baseline data directly. In custom mode, you can change every score from 1 to 5.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Results</h2>
+        <div class="summary">
+          <div class="highlight">
+            Recommended path
+            <strong id="bestProgramme">Not calculated yet</strong>
+          </div>
+          <div class="note" id="profileNote">
+            Run the model to see the utility scores, probability percentages, and the programme chart.
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>Programme</th>
+                <th>Utility</th>
+                <th>Probability</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 18px;">Probability Chart</h2>
+        <canvas id="chartCanvas" width="520" height="360"></canvas>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
