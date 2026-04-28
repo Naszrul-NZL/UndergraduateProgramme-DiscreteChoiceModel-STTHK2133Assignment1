@@ -1,6 +1,4 @@
-# STTHK2133 Assignment 1
-
-## Discrete Choice Model for Undergraduate Programme Selection
+# Discrete Choice Model for Undergraduate Programme Selection
 
 This project implements a discrete choice model to simulate how a student chooses between six undergraduate programme paths:
 
@@ -11,13 +9,6 @@ This project implements a discrete choice model to simulate how a student choose
 - Management
 - Arts
 
-The project includes:
-
-- an Octave version of the model
-- a JavaScript web version for GitHub Pages deployment
-- assignment documentation in Word format
-
----
 
 ## Project Objective
 
@@ -37,28 +28,6 @@ The model calculates:
 
 1. the **utility score** for each programme
 2. the **probability** of choosing each programme using the **Multinomial Logit Model**
-
----
-
-## Files in This Project
-
-- [student_program_choice_app.m](./student_program_choice_app.m)  
-  Octave implementation of the discrete choice model
-
-- [index.html](./index.html)  
-  Main web page for GitHub Pages deployment
-
-- [style.css](./style.css)  
-  Styling for the web application
-
-- [script.js](./script.js)  
-  JavaScript logic for the browser-based model
-
-- [STTHK2133_Assignment01_SectionA_Answers.docx](./STTHK2133_Assignment01_SectionA_Answers.docx)  
-  Written answers for Section A, Section B Part I, and Section B Part III
-
-- [STTHK2133_Assignment01_PartII_No1_No2_Documentation.docx](./STTHK2133_Assignment01_PartII_No1_No2_Documentation.docx)  
-  Earlier documentation for Part II no. 1 and 2
 
 ---
 
@@ -146,88 +115,6 @@ This means the model predicts that Aiman is most likely to choose **Engineering*
 
 ---
 
-## Code Documentation
-
-## Octave Code
-
-The Octave script is in [student_program_choice_app.m](./student_program_choice_app.m).
-
-### What it does
-
-- stores the six programmes
-- stores the six decision factors
-- stores Aiman's baseline ratings and weights
-- asks the user to choose:
-  - `1` for Aiman's default profile
-  - `2` for a custom profile
-- computes utility scores
-- computes Multinomial Logit probabilities
-- prints the result table
-- draws a bar chart
-
-### Main logic
-
-#### Aiman default mode
-
-If the user selects `1`, the script:
-
-- uses the hardcoded ratings matrix
-- uses the hardcoded weight array
-- immediately calculates results
-
-#### Custom mode
-
-If the user selects `2`, the script:
-
-- asks the user to enter programme ratings from 1 to 5
-- asks the user to enter factor importance values
-- normalizes the weights
-- calculates new utilities and probabilities
-
----
-
-## Website Code
-
-The website version is split into:
-
-- [index.html](./index.html)
-- [style.css](./style.css)
-- [script.js](./script.js)
-
-### `index.html`
-
-This file contains:
-
-- the structure of the web app
-- the input fields
-- the results table
-- the chart canvas
-
-### `style.css`
-
-This file contains:
-
-- page layout
-- table styling
-- form styling
-- buttons
-- responsive design for smaller screens
-
-### `script.js`
-
-This file contains:
-
-- programme and factor arrays
-- Aiman baseline ratings and weights
-- input reading and validation
-- utility calculation
-- probability calculation
-- result rendering
-- chart drawing logic
-- profile mode switching
-
----
-
 ## Model Assumptions
 
 This model is based on the following assumptions:
@@ -304,42 +191,7 @@ So the model is not only useful for Aiman. It can also be used to compare many d
 
 ---
 
-## How to Run the Website Locally
 
-Open [index.html](./index.html) in a browser.
-
-You can:
-
-- use Aiman's default profile
-- switch to custom mode
-- change ratings and weights
-- run the model
-- observe the utility table and probability chart
-
----
-
-## How to Deploy on GitHub Pages
-
-1. Upload these files to a GitHub repository:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-
-2. Open the repository on GitHub.
-
-3. Go to:
-   `Settings > Pages`
-
-4. Under **Build and deployment**:
-   - set **Source** to `Deploy from a branch`
-   - choose the main branch
-   - choose the root folder `/`
-
-5. Save the settings.
-
-6. GitHub Pages will generate a public website link.
-
----
 
 ## Summary
 
